@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:background="@color/white"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/place_holder"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundPercent="0.5" />
+
+        <TextView
+            android:id="@+id/packageName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Gym Package"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/logo"
+            app:layout_constraintTop_toTopOf="@id/logo"
+            app:layout_constraintBottom_toTopOf="@id/packageStarDateLbl"
+            />
+
+        <TextView
+            android:id="@+id/packageStarDateLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Start Date"
+            android:textColor="@color/black"
+            android:layout_marginEnd="@dimen/_50sdp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:paddingStart="@dimen/_5sdp"
+            app:layout_constraintEnd_toStartOf="@id/packageEndDateLbl"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintStart_toEndOf="@id/logo"
+            app:layout_constraintTop_toBottomOf="@id/packageName"
+            app:layout_constraintBottom_toTopOf="@id/packageStarDate"
+            />
+
+        <TextView
+            android:id="@+id/packageEndDateLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="End Date"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/packageStarDateLbl"
+            app:layout_constraintTop_toTopOf="@id/packageStarDateLbl"
+            app:layout_constraintBottom_toBottomOf="@id/packageStarDateLbl"
+
+            />
+
+        <TextView
+            android:id="@+id/packageStarDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="28-02-2020"
+            android:textColor="@color/black"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:textSize="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintEnd_toStartOf="@id/packageEndDate"
+            app:layout_constraintStart_toStartOf="@+id/packageStarDateLbl"
+            app:layout_constraintEnd_toEndOf="@+id/packageStarDateLbl"
+            app:layout_constraintTop_toBottomOf="@id/packageStarDateLbl"
+            app:layout_constraintBottom_toBottomOf="@+id/logo"
+            />
+
+        <TextView
+            android:id="@+id/packageEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="20-08-2021"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@+id/packageEndDateLbl"
+            app:layout_constraintStart_toStartOf="@id/packageEndDateLbl"
+            app:layout_constraintTop_toTopOf="@id/packageStarDate"
+            app:layout_constraintBottom_toBottomOf="@id/packageStarDate"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/viewMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="View More"
+            android:textColor="@color/themeOrange"
+            android:textSize="@dimen/_8sdp"
+            android:layout_margin="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

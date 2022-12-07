@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/closeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:src="@drawable/ic_close_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/apply"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:text="Apply"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_medium"
+        android:backgroundTint="@color/themeOrange_600"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/divider1"/>
+
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/grey_150"
+        app:layout_constraintTop_toBottomOf="@id/closeIcon" />
+
+    <TextView
+        android:id="@+id/organisationLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Organisation:"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/organisationList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/organisationLbl"
+        app:layout_constraintStart_toStartOf="@id/organisationLbl"
+        app:layout_constraintTop_toBottomOf="@id/organisationLbl"
+        app:spanCount="3"
+        tools:itemCount="7"
+        tools:listitem="@layout/item_filter" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/grey_150"
+        app:layout_constraintTop_toBottomOf="@id/organisationList" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/organisationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:constraint_referenced_ids="organisationLbl,organisationList,divider2"/>
+    <TextView
+        android:id="@+id/categoriesLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Categories:"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriesFilterList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/organisationLbl"
+        app:layout_constraintStart_toStartOf="@id/organisationLbl"
+        app:layout_constraintTop_toBottomOf="@id/categoriesLbl"
+        app:spanCount="4"
+        tools:itemCount="7"
+        tools:listitem="@layout/item_filter" />
+
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/grey_150"
+        app:layout_constraintTop_toBottomOf="@id/categoriesFilterList" />
+
+    <androidx.constraintlayout.widget.Group
+
+        android:id="@+id/categoriesView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:constraint_referenced_ids="categoriesLbl,categoriesFilterList,divider3"/>
+
+  <TextView
+        android:id="@+id/subCategoriesLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Sub Categories:"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/subCategoriesFilterList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/organisationLbl"
+        app:layout_constraintStart_toStartOf="@id/organisationLbl"
+        app:layout_constraintTop_toBottomOf="@id/subCategoriesLbl"
+        app:spanCount="4"
+        tools:itemCount="7"
+        tools:listitem="@layout/item_filter" />
+
+
+
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/grey_150"
+        app:layout_constraintTop_toBottomOf="@id/subCategoriesFilterList" />
+
+    <TextView
+        android:id="@+id/distanceLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Distance"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/divider4" />
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="1.5 KM"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/distanceLbl"
+        app:layout_constraintBottom_toBottomOf="@id/distanceLbl"/>
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/rangeSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="asd"
+        app:values="@array/initial_slider_values"
+        android:valueFrom="0.0"
+        android:valueTo="20.0"
+        android:stepSize="0.5"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distanceLbl"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

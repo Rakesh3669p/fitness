@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.utils.widget.ImageFilterView
+    android:id="@+id/imageSlide"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:src="@drawable/main_banner"
+    app:roundPercent="0.4"
+    android:scaleType="fitXY">
+
+</androidx.constraintlayout.utils.widget.ImageFilterView>

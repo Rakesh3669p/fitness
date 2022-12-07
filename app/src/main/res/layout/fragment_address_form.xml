@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.address.AddressFormFragment"
+    android:windowSoftInputMode="adjustResize">
+
+    <View
+        android:id="@+id/appBarBg"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/black_bottom_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/backArrow"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/appBarBg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/appBarBg" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Address"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@id/appBarBg"
+        app:layout_constraintEnd_toEndOf="@id/appBarBg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/appBarBg" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/appBarBg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/addressLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/completeAddressEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_box"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Compete Address"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:minHeight="@dimen/_60sdp"
+        android:maxHeight="@dimen/_60sdp"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey_200"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@id/addressLbl"
+        app:layout_constraintEnd_toEndOf="@id/addressLbl"
+        app:layout_constraintTop_toBottomOf="@id/addressLbl" />
+
+
+    <TextView
+        android:id="@+id/stateLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="State"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/completeAddressEdt"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <View
+        android:id="@+id/stateSpinnerView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/edit_text_box"
+        app:layout_constraintTop_toBottomOf="@id/stateLbl"
+        app:layout_constraintStart_toStartOf="@id/stateLbl"
+        app:layout_constraintEnd_toEndOf="@id/stateLbl"
+        />
+        <Spinner
+            android:id="@+id/stateSpinner"
+            style="@style/SpinnerTheme"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_200"
+            android:textCursorDrawable="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="@id/stateSpinnerView"
+            app:layout_constraintBottom_toBottomOf="@id/stateSpinnerView"
+            app:layout_constraintStart_toStartOf="@id/stateSpinnerView"
+            app:layout_constraintEnd_toEndOf="@id/stateSpinnerView"/>
+
+
+ <TextView
+        android:id="@+id/cityLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/stateSpinner"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <View
+        android:id="@+id/citySpinnerView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/edit_text_box"
+        app:layout_constraintTop_toBottomOf="@id/cityLbl"
+        app:layout_constraintStart_toStartOf="@id/cityLbl"
+        app:layout_constraintEnd_toEndOf="@id/cityLbl"
+        />
+        <Spinner
+            style="@style/SpinnerTheme"
+            android:id="@+id/citySpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_15sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_200"
+            android:textCursorDrawable="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="@+id/citySpinnerView"
+            app:layout_constraintBottom_toBottomOf="@+id/citySpinnerView"
+            app:layout_constraintStart_toStartOf="@id/citySpinnerView"
+            app:layout_constraintEnd_toEndOf="@id/citySpinnerView"/>
+
+
+
+    <TextView
+        android:id="@+id/pincodeLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pincode"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/citySpinnerView"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/pincodeEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_box"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Enter your pincode"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:gravity="start"
+        android:inputType="number"
+        android:maxLength="6"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey_200"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@id/pincodeLbl"
+        app:layout_constraintEnd_toEndOf="@id/pincodeLbl"
+        app:layout_constraintTop_toBottomOf="@id/pincodeLbl" />
+
+    <TextView
+        android:id="@+id/phoneLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Phone"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/pincodeEdt"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/mobileEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_box"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Enter your Mobile Number"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:gravity="start"
+        android:maxLength="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey_200"
+        android:textSize="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_25sdp"
+        app:layout_constraintStart_toStartOf="@id/phoneLbl"
+        app:layout_constraintEnd_toEndOf="@id/phoneLbl"
+        app:layout_constraintTop_toBottomOf="@id/phoneLbl" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submit"
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:backgroundTint="@color/themeOrange"
+        android:text="Submit"
+        app:layout_constraintVertical_bias="0"
+        app:cornerRadius="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobileEdt" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@id/submit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+    android:id="@+id/filterName"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Organisation"
+    android:gravity="start"
+    android:textColor="@color/black"
+    android:textSize="@dimen/_10sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:textIsSelectable="true"
+    android:background="@drawable/filter_selector"
+    android:fontFamily="@font/poppins_medium"
+    android:padding="@dimen/_7sdp"
+    />

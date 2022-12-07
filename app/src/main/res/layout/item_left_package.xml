@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/subBannerView2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_78sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="#d0edfd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:roundPercent="0.4" />
+
+    <TextView
+        android:id="@+id/subBanner2GymPackageLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:text="Your Package"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="@id/subBannerView2"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/subBannerImage2"
+        app:layout_constraintTop_toTopOf="@+id/subBannerView2" />
+
+    <TextView
+        android:id="@+id/subBanner2Desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:maxLines="2"
+        android:paddingStart="@dimen/_10sdp"
+        android:text="Some thing special you get with personal training and diet"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="@id/subBannerView2"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/subBannerImage2"
+        app:layout_constraintTop_toBottomOf="@+id/subBanner2GymPackageLbl" />
+
+    <TextView
+        android:id="@+id/subBanner2PriceTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:text="Starting At:"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintEnd_toStartOf="@id/subBanner2Price"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/subBannerImage2"
+        app:layout_constraintTop_toBottomOf="@+id/subBanner2Desc" />
+
+    <TextView
+        android:id="@+id/subBanner2Price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:text="$140"
+        android:textColor="@color/themeOrange"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/subBanner2PriceTag"
+        app:layout_constraintEnd_toEndOf="@id/subBannerView2"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/subBanner2PriceTag"
+        app:layout_constraintTop_toTopOf="@id/subBanner2PriceTag" />
+
+    <ImageView
+        android:id="@+id/subBannerImage2"
+        android:layout_width="@dimen/_115sdp"
+        android:layout_height="@dimen/_105sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/sub_banner_2"
+        app:layout_constraintBottom_toBottomOf="@id/subBannerView2"
+        app:layout_constraintStart_toStartOf="@id/subBannerView2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

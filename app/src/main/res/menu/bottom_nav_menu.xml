@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuFAQ"
+        android:enabled="true"
+        android:icon="@drawable/help_icon"
+        android:title="Help" />
+    <item
+        android:id="@+id/menuBlog"
+        android:enabled="true"
+        android:icon="@drawable/blog_icon"
+        android:iconTint="@color/white"
+        android:title="Account" />
+
+    <item
+        android:id="@+id/center"
+        android:enabled="true"
+        android:title="Offer" />
+
+    <item
+        android:id="@+id/menuOffers"
+        android:enabled="true"
+        android:icon="@drawable/discount_icon"
+        android:title="Offer" />
+    <item
+            android:id="@+id/menuSocial"
+        android:enabled="true"
+        android:icon="@drawable/social_login"
+        android:title="Social" />
+
+</menu>

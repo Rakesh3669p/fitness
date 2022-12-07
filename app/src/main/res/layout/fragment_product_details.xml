@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".ui.productDetails.ProductDetailsFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/packageImages"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@id/packageImages"
+            app:layout_constraintEnd_toEndOf="@id/packageImages"
+            app:layout_constraintStart_toStartOf="@id/packageImages"
+            app:tabBackground="@drawable/slider_selector_dots"
+            app:tabIndicatorHeight="0dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/favouritePackage"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="#FFE6E6"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_favorite"
+            android:tint="@color/themeOrange"
+            app:layout_constraintEnd_toStartOf="@+id/sharePackage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundPercent="1" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/sharePackage"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="#FFE6E6"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_share"
+            android:tint="@color/themeOrange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundPercent="1" />
+
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/backArrow"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="#FFE6E6"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_back_arrow"
+            android:tint="@color/themeOrange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundPercent="1" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:numStars="5"
+            android:rating="4"
+            android:theme="@style/RatingBar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/packageName"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@id/packageImages" />
+
+        <TextView
+            android:id="@+id/ratingBarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="(4.5)"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/ratingBar"
+            app:layout_constraintStart_toEndOf="@id/ratingBar"
+            app:layout_constraintTop_toTopOf="@id/ratingBar" />
+
+        <TextView
+            android:id="@+id/packageName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Body Builder"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toTopOf="@id/packageAddress"
+            app:layout_constraintEnd_toStartOf="@id/packageLocationDistance"
+            app:layout_constraintStart_toStartOf="@id/packageImages"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/packageAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="SomeWhere in India 394210"
+            android:textColor="@color/grey_150"
+            android:textSize="@dimen/_9sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/packageLocationDistance"
+            app:layout_constraintStart_toStartOf="@id/packageImages"
+            app:layout_constraintTop_toBottomOf="@id/packageName" />
+
+        <TextView
+            android:id="@+id/packageLocationDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/orange_corner_radius"
+            android:drawablePadding="@dimen/_2sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="@dimen/_9sdp"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
+            app:drawableStartCompat="@drawable/ic_location_filled"
+            app:layout_constraintBottom_toBottomOf="@id/packageAddress"
+            app:layout_constraintEnd_toEndOf="@id/packageImages"
+            app:layout_constraintTop_toTopOf="@id/packageName" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/lite_grey_100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/packageAddress" />
+
+        <TextView
+            android:id="@+id/packageDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Select Duration:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintEnd_toEndOf="@id/packageName"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@id/view5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/selectPackageMonthRv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/packageLocationDistance"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@id/packageDuration"
+            app:spanCount="3"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_select_month" />
+
+        <TextView
+            android:id="@+id/packageTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Select Time:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintEnd_toEndOf="@id/packageName"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@id/selectPackageMonthRv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/selectpackageTimeRv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/packageLocationDistance"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@id/packageTime"
+            app:spanCount="3"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_select_time" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/lite_grey_100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectpackageTimeRv" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/addToCart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="@dimen/_2sdp"
+            app:cardElevation="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="@id/view6"
+            app:layout_constraintStart_toStartOf="@id/view6"
+            app:layout_constraintTop_toBottomOf="@id/view6">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/addToCartLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_cart"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Add to Cart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/addToCartPriceDivider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/addToCartPriceDivider"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/packagePrice"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/packagePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingVertical="@dimen/_9sdp"
+                    android:text="25000"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/lite_grey_100"
+            app:layout_constraintTop_toBottomOf="@+id/addToCart" />
+
+
+        <TextView
+            android:id="@+id/vendorDetailsLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Service Provider"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toTopOf="@id/divider4"
+            app:layout_constraintEnd_toEndOf="@id/packageName"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@color/lite_grey_100"
+            app:layout_constraintTop_toBottomOf="@+id/vendorDetailsLbl" />
+
+        <View
+            android:id="@+id/serviceProviderGroup"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/vendorDetailsLbl"
+            app:layout_constraintBottom_toBottomOf="@+id/divider1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/vendorImage"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_image"
+            app:layout_constraintBottom_toTopOf="@id/divider1"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@+id/divider4"
+            app:roundPercent="1" />
+
+        <TextView
+            android:id="@+id/vendorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Vendor Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/vendorEmail"
+            app:layout_constraintEnd_toEndOf="@id/packageName"
+            app:layout_constraintStart_toEndOf="@id/vendorImage"
+            app:layout_constraintTop_toTopOf="@id/vendorImage"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/vendorEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="VendorName@gmail.com"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@id/vendorImage"
+            app:layout_constraintEnd_toEndOf="@id/packageName"
+            app:layout_constraintStart_toEndOf="@id/vendorImage"
+            app:layout_constraintTop_toBottomOf="@id/vendorName" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/lite_grey_100"
+            app:layout_constraintTop_toBottomOf="@+id/vendorImage" />
+
+        <TextView
+            android:id="@+id/packageDescLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Package Description"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toTopOf="@id/divider2"
+            app:layout_constraintEnd_toEndOf="@id/packageName"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@color/lite_grey_100"
+            app:layout_constraintTop_toBottomOf="@+id/packageDescLbl"
+
+            />
+
+        <TextView
+            android:id="@+id/packageDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Body BuilderBody BuilderBody BuilderBody BuilderBody BuilderBody BuilderBody BuilderBody BuilderBody BuilderBody BuilderBody BuilderBody Builder"
+            android:textColor="@color/grey_150"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintEnd_toEndOf="@id/packageName"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/lite_grey_100"
+            app:layout_constraintTop_toBottomOf="@+id/packageDesc" />
+
+        <TextView
+            android:id="@+id/relatedProductLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Related Packages"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toTopOf="@id/divider6"
+            app:layout_constraintEnd_toEndOf="@id/packageName"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@color/lite_grey_100"
+            app:layout_constraintTop_toBottomOf="@+id/relatedProductLbl"
+
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/relatedProductRv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/packageLocationDistance"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@id/divider6"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_package_list" />
+
+        <TextView
+            android:id="@+id/noRelatedProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_120sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="No Related Products to Show"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/packageLocationDistance"
+            app:layout_constraintStart_toStartOf="@id/packageName"
+            app:layout_constraintTop_toBottomOf="@id/divider6" />
+
+        <View
+            android:id="@+id/loadingView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:elevation="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

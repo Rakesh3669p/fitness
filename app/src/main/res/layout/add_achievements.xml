@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:paddingVertical="@dimen/_25sdp">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/closeDialogue"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="#8BFF7012"
+        app:roundPercent="1"
+        android:src="@drawable/ic_close_white"
+        android:tint="@color/white"
+        android:padding="@dimen/_4sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/addAchievementsLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Add Achievements"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/titleLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Title"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addAchievementsLbl" />
+
+    <EditText
+        android:id="@+id/titleEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@drawable/edit_text_box"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="start"
+
+        android:hint="Enter your Goal"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey_200"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@id/titleLbl"
+        app:layout_constraintStart_toStartOf="@id/titleLbl"
+        app:layout_constraintTop_toBottomOf="@id/titleLbl" />
+
+    <TextView
+        android:id="@+id/descLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Description"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleEdt" />
+
+    <EditText
+        android:id="@+id/descEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@drawable/edit_text_box"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="start"
+        android:hint="Enter your Goal Description"
+        android:minHeight="@dimen/_45sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey_200"
+            android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@id/descLbl"
+        app:layout_constraintStart_toStartOf="@id/descLbl"
+        app:layout_constraintTop_toBottomOf="@id/descLbl" />
+
+    <TextView
+        android:id="@+id/startDateLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Start Date"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toStartOf="@+id/endDateLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descEdt" />
+
+    <TextView
+        android:id="@+id/startDateEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/edit_text_box"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="start"
+        android:hint="Select Date"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey_200"
+        android:textCursorDrawable="@color/black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toStartOf="@id/endDateEdt"
+        app:layout_constraintStart_toStartOf="@id/startDateLbl"
+        app:layout_constraintTop_toBottomOf="@id/startDateLbl" />
+
+    <TextView
+        android:id="@+id/endDateLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="End Date"
+        android:textColor="@color/grey_150"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toBottomOf="@id/startDateLbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/startDateLbl"
+        app:layout_constraintTop_toTopOf="@id/startDateLbl" />
+
+    <TextView
+        android:id="@+id/endDateEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:background="@drawable/edit_text_box"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="start"
+        android:hint="Select Date"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey_200"
+        android:textCursorDrawable="@color/black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/startDateEdt"
+        app:layout_constraintTop_toBottomOf="@id/endDateLbl" />
+
+    <RadioGroup
+        android:id="@+id/achievementsRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/endDateEdt"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+        <RadioButton
+            android:id="@+id/startRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Start"/>
+
+        <RadioButton
+            android:id="@+id/endRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:text="Completed"/>
+
+        </LinearLayout>
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitAchievement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:backgroundTint="@color/themeOrange"
+        android:paddingHorizontal="@dimen/_45sdp"
+        android:text="Submit"
+        app:cornerRadius="@dimen/_6sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/achievementsRadioGroup" />
+</androidx.constraintlayout.widget.ConstraintLayout>

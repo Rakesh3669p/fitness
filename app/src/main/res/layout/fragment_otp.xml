@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.loginSignUp.otp.OtpFragment">
+
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="250dp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/login_image1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/loginLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_45sdp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/login_quote_lbl"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_26sdp"
+        app:layout_constraintBottom_toBottomOf="@id/imageLogo"
+        app:layout_constraintEnd_toStartOf="@+id/imageLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageLogo" />
+
+
+    <com.mukesh.OtpView
+        android:id="@+id/otpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:inputType="number"
+        android:itemBackground="@color/lite_grey_100"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:OtpItemCount="6"
+        app:OtpLineColor="#97E8E8E8"
+        app:OtpViewType="line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageLogo" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/verifyBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_35sdp"
+        app:cardBackgroundColor="@color/themeOrange"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@id/otpView"
+        app:layout_constraintStart_toStartOf="@+id/otpView"
+        app:layout_constraintTop_toBottomOf="@+id/otpView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_45sdp"
+            android:paddingVertical="@dimen/_9sdp"
+            android:text="@string/verify_lbl"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/resendOTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/resend_otp_lbl"
+        android:textColor="@color/themeOrange"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="@id/verifyBtn"
+        app:layout_constraintStart_toStartOf="@id/verifyBtn"
+        app:layout_constraintTop_toBottomOf="@+id/verifyBtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

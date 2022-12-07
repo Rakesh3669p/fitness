@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeToRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.organisationsList.OrganisationListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/appBarBg"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/black_bottom_corner_radius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/backArrow"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintBottom_toBottomOf="@id/appBarBg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/appBarBg" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/organisation_lbl"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="@id/appBarBg"
+                app:layout_constraintEnd_toEndOf="@id/appBarBg"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/backArrow"
+                app:layout_constraintTop_toTopOf="@id/appBarBg" />
+
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="@id/appBarBg"
+                app:layout_constraintEnd_toStartOf="@id/favourite"
+                app:layout_constraintTop_toTopOf="@id/appBarBg" />
+
+            <ImageView
+                android:id="@+id/favourite"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:src="@drawable/ic_favorite"
+                app:layout_constraintBottom_toBottomOf="@id/appBarBg"
+                app:layout_constraintEnd_toStartOf="@id/cart"
+                app:layout_constraintTop_toTopOf="@id/appBarBg" />
+
+
+            <ImageView
+                android:id="@+id/cart"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:src="@drawable/ic_cart"
+                app:layout_constraintBottom_toBottomOf="@id/appBarBg"
+                app:layout_constraintEnd_toEndOf="@id/appBarBg"
+                app:layout_constraintTop_toTopOf="@id/appBarBg" />
+
+            <TextView
+                android:id="@+id/cartCount"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/orange_circle_with_border"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@id/cart"
+                app:layout_constraintEnd_toEndOf="@id/cart"
+                app:layout_constraintStart_toStartOf="@id/cart"
+                app:layout_constraintTop_toTopOf="@id/cart" />
+
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/cityImage"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@color/themeOrange_600"
+                android:padding="@dimen/_10sdp"
+                android:rotation="50"
+                android:src="@drawable/ic_navigation"
+                android:tint="@color/white"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cityFiltersRv"
+                app:layout_constraintTop_toTopOf="@+id/cityFiltersRv"
+
+                app:roundPercent="1" />
+            <TextView
+                android:id="@+id/cityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Near by"
+                android:textSize="@dimen/_9ssp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintStart_toStartOf="@id/cityImage"
+                app:layout_constraintEnd_toEndOf="@id/cityImage"
+                app:layout_constraintTop_toBottomOf="@+id/cityImage"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cityFiltersRv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cityImage"
+                app:layout_constraintTop_toBottomOf="@+id/appBarBg"
+                tools:itemCount="8"
+                tools:listitem="@layout/item_cities" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/organisationRv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityFiltersRv"
+                app:spanCount="1"
+                tools:listitem="@layout/item_organisation_list" />
+
+            <TextView
+                android:id="@+id/noOrganisationsLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="No Organisations to Show"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarBg" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

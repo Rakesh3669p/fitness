@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_15sdp">
+
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/updateAchievements"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="#8BFF7012"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintEnd_toStartOf="@id/deleteAchievements"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundPercent="1" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/deleteAchievements"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="#8BFF7012"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundPercent="1" />
+
+
+        <View
+            android:id="@+id/statusStart"
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="0dp"
+            android:background="@color/green"
+            app:layout_constraintBottom_toBottomOf="@id/achievementsDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/statusEnd"
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="0dp"
+            android:background="@color/themeOrange"
+            app:layout_constraintBottom_toBottomOf="@id/achievementsDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/achievementsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Title"
+            android:paddingEnd="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintEnd_toStartOf="@id/updateAchievements"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/achievementsDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="da;kfdpo mafasdkl fmaekij fws,d gwseowki skg swlm gedigd,med"
+            android:textColor="@color/grey_150"
+            android:textSize="@dimen/_9sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/achievementsTitle"
+            app:layout_constraintTop_toBottomOf="@id/achievementsTitle" />
+
+        <TextView
+            android:id="@+id/achievementsDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="2022-08-20"
+            android:drawablePadding="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:drawableStart="@drawable/ic_calendar"
+            android:drawableTint="@color/themeOrange"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@id/achievementsTitle"
+            app:layout_constraintTop_toBottomOf="@id/achievementsDesc" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
